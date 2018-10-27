@@ -63,6 +63,12 @@ while True:
             missed_letters = ''
             correct_letters = ''
             game_is_done = False
-            secret_word = RandomWords().get_random_word(hasDictionaryDef="true", maxLength=5)
+            secret_word = (
+                RandomWords()
+                .get_random_word(
+                    hasDictionaryDef="true",
+                    maxLength=max_length
+                )
+            )
         else:
             break
