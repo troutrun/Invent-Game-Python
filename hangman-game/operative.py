@@ -19,11 +19,11 @@ def set_max_length(difficulty_level: str) -> int:
     difficulty_level = difficulty_level[0].upper()
 
     if difficulty_level == 'M':
-        max_length = 6
+        max_length = 7
     elif difficulty_level == 'H':
         max_length = 10
     else:
-        max_length = 4
+        max_length = 5
     return max_length
 
 

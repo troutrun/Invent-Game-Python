@@ -6,11 +6,13 @@ from random_word import RandomWords
 print('H A N G M A N')
 
 difficulty = 'X'
+
 while difficulty not in 'EMH':
     print('Select difficulty: E - Easy, M - Medium, H - Hard')
-    difficulty = input().upper()
+    difficulty = input()[0].upper()
 
 max_length = operative.set_max_length(difficulty)
+print(max_length)
 missed_letters = ''
 correct_letters = ''
 secret_word = (
