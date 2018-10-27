@@ -4,9 +4,23 @@ from random_word import RandomWords
 
 
 print('H A N G M A N')
+
+difficulty = 'X'
+while difficulty not in 'EMH':
+    print('Select difficulty: E - Easy, M - Medium, H - Hard')
+    difficulty = input().upper()
+
+max_length = operative.set_max_length(difficulty)
 missed_letters = ''
 correct_letters = ''
-secret_word = RandomWords().get_random_word(hasDictionaryDef="true", maxLength=5)
+secret_word = (
+    RandomWords()
+    .get_random_word(
+        hasDictionaryDef="true",
+        maxLength=max_length
+    )
+)
+
 game_is_done = False
 
 while True:
@@ -19,12 +33,12 @@ while True:
         correct_letters = correct_letters + guess
 
         # Check if the player has won.
-        foundAllLetters = True
+        found_all_letters = True
         for i in range(len(secret_word)):
             if secret_word[i] not in correct_letters:
-                foundAllLetters = False
+                found_all_letters = False
                 break
-        if foundAllLetters:
+        if found_all_letters:
             print('Yes! The secret word is "' + secret_word + '"! You have won!')
             game_is_done = True
     else:

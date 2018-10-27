@@ -1,6 +1,30 @@
-import random
-import typing
 import sketch
+
+
+def set_max_length(difficulty_level: str) -> int:
+    """
+    Return an integer representing the max character length
+    depending on the difficulty level given.
+
+    :param difficulty_level:
+        A string representing the level of difficulty. The
+        levels are Easy, Medium, and Hard. This string can be
+        upper or lower case and will work with a single character
+        such as E, M and H, or the whole word, Easy, Medium and
+        Hard.
+    :return:
+        An integer representing the max character length based on
+        the difficulty level given.
+    """
+    difficulty_level = difficulty_level[0].upper()
+
+    if difficulty_level == 'M':
+        max_length = 6
+    elif difficulty_level == 'H':
+        max_length = 10
+    else:
+        max_length = 4
+    return max_length
 
 
 def display_board(
